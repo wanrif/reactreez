@@ -1,0 +1,39 @@
+@import url(https://fonts.bunny.net/css?family=sofia-sans:200,400,400i,500,600,600i,800,900);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  ._btn_primary {
+    @apply font-sans px-4 py-1 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-base font-semibold rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-offset-2 tracking-wider;
+  }
+
+  ._btn_secondary {
+    @apply font-sans px-4 py-1 bg-slate-50 hover:bg-slate-100 focus:ring-slate-200 focus:ring-offset-slate-100 text-black transition ease-in duration-200 text-center text-base font-semibold rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #a9a7a7, #434343 1px, #7d7a7a 0, #828181);
+  border-radius: 5px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #434343;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
