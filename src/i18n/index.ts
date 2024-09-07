@@ -3,8 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import { selectLocale } from '@app/selectors';
 import store, { persistor } from '@store/stores';
 
-import en from './en.json';
-import id from './id.json';
+import en from './en';
+import id from './id';
 
 const resources = {
   en: {

@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vitest/globals", "vitest/jsdom", "@testing-library/jest-dom"],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@components/*": ["./src/components/*"],
@@ -36,6 +37,6 @@
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true
   },
-  "include": ["src", "__tests__"],
+  "include": ["src", "__tests__", "./vitest.setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

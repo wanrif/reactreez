@@ -19,7 +19,7 @@ const Locale = () => {
   }, [i18n.language]);
 
   return (
-    <button type='button' className='font-medium cursor-pointer' onClick={switchLocale}>
+    <button type='button' className='font-medium cursor-pointer' onClick={switchLocale} data-testid='locale-toggle'>
       {toUpper(i18n.language)}
     </button>
   );

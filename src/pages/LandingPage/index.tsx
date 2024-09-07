@@ -2,11 +2,7 @@ import { useGetPingQuery } from '@app/reducer';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface Props {
-  headerHeight?: number;
-}
-
-const LandingPage = ({ headerHeight = 0 }: Props) => {
+const LandingPage = () => {
   const { t } = useTranslation();
   const { data, error, isLoading } = useGetPingQuery({});
 
@@ -17,9 +13,7 @@ const LandingPage = ({ headerHeight = 0 }: Props) => {
   }, [error]);
 
   return (
-    <main
-      style={{ minHeight: `calc(100vh - ${headerHeight}px)` }}
-      className='flex flex-col items-center justify-center'>
+    <main className='flex flex-col items-center justify-center min-h-[calc(100dvh-60px)]'>
       <div className='text-4xl font-bold'>{t('welcome')}</div>
       <div className='text-2xl'>{isLoading ? 'loading...' : data?.message}</div>
     </main>

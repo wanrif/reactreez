@@ -3,9 +3,8 @@ import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 import { persistConfig } from './persistence';
 import createReducer from './reducers';
 import apiMiddleware from './apiMiddleware';
-// import authMiddleware from '@middleware/authMiddleware';
 
-const persistedReducer = persistReducer(persistConfig, createReducer());
+export const persistedReducer = persistReducer(persistConfig, createReducer());
 
 const middlewares: Middleware[] = [...apiMiddleware];
 
@@ -17,6 +16,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(middlewares),
+  devTools: process.env['NODE_ENV'] !== 'production',
 });
 
 export const persistor = persistStore(store);

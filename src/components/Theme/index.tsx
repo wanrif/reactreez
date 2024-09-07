@@ -1,4 +1,3 @@
-// index.tsx
 import { useCallback } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 
@@ -21,8 +20,8 @@ const Theme = () => {
   }, [theme]);
 
   return (
-    <div className='flex items-center gap-2'>
-      <button type='button' onClick={handleTheme}>
+    <div className='flex items-center gap-2' data-testid='theme-toggle'>
+      <button type='button' onClick={handleTheme} aria-label='toggleTheme'>
         {theme === 'dark' ? <BsFillMoonStarsFill /> : <BsSunFill />}
       </button>
     </div>

@@ -1,4 +1,3 @@
-// App.tsx
 import { useEffect } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { Toaster } from 'react-hot-toast';
@@ -23,8 +22,8 @@ const App = () => {
 
   return (
     <div className='antialiased scroll-smooth'>
-      <Toaster reverseOrder={false} />
       <ClientRoutes />
+      <Toaster reverseOrder={false} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+// index.tsx
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -7,15 +8,7 @@ import Locale from '@components/Locale';
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const header = useRef<HTMLDivElement>(null);
-  const [headerHeight, setHeaderHeight] = useState<number>(0);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    if (header.current) {
-      setHeaderHeight(header.current.clientHeight);
-    }
-  }, [header.current?.clientHeight]);
 
   const navbarLinks = new Set([
     {
@@ -37,7 +30,9 @@ const NotFound = () => {
 
   return (
     <div className='flex flex-col'>
-      <div ref={header} className='w-full bg-white shadow-sm dark:bg-primary-200 text-primary-200 dark:text-primary-50'>
+      <div
+        className='w-full bg-white shadow-sm dark:bg-primary-200 text-primary-200 dark:text-primary-50'
+        data-testid='header'>
         <div className='flex items-center container mx-auto justify-between py-4 px-4 lg:px-28'>
           <div className='text-xl font-medium cursor-pointer' onClick={() => navigate('/')}>
             Navbar
@@ -58,10 +53,8 @@ const NotFound = () => {
         </div>
       </div>
 
-      <section
-        style={{ minHeight: `calc(100dvh - ${headerHeight}px)` }}
-        className='flex items-center justify-center text-4xl font-bold bg-slate-50 dark:bg-primary-300 text-primary-200 dark:text-primary-50'>
-        {t('not_found')}
+      <section className='flex items-center justify-center text-4xl font-bold bg-slate-50 dark:bg-primary-300 text-primary-200 dark:text-primary-50 min-h-[calc(100dvh-60px)]'>
+        <div className='text-center'>{t('not_found')}</div>
       </section>
     </div>
   );
