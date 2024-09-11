@@ -18,7 +18,8 @@ const Button: FC<ButtonProps> = ({ text, onClick, className, type, disabled }) =
         hover:bg-amber-600 focus:ring-amber-600 focus:ring-offset-amber-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg${
           className ? ' ' + className : ''
         }`}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       {text}
     </button>
   );

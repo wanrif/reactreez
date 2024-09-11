@@ -4,7 +4,7 @@ import NotFound from '@pages/NotFound';
 import { renderWithProviders } from '@utils/testHelper';
 import { act } from 'react';
 import { useNavigate } from 'react-router-dom';
-import store from '@store/stores';
+import store from '@store/configureStore';
 import { toggleTheme } from '@components/Theme/thunk';
 import { setTheme } from '@app/reducer';
 

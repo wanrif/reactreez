@@ -30,16 +30,16 @@ export const persistConfig: PersistConfig = {
 };
 
 export const mapWithPersistor = (reducers: Record<string, ReducerWithWhitelist>): Record<string, Reducer> =>
-  Object.entries(reducers)
-    .map(([key, item]) => ({
-      [key]: persistReducer(
+  Object.fromEntries(
+    Object.entries(reducers).map(([key, { reducer, whitelist }]) => [
+      key,
+      persistReducer(
         {
+          ...persistConfig,
           key,
-          storage,
-          whitelist: item.whitelist,
-          keyPrefix: persistConfig.keyPrefix,
+          whitelist,
         },
-        item.reducer
+        reducer
       ),
-    }))
-    .reduce((obj, item) => Object.assign(obj, item), {});
+    ])
+  );

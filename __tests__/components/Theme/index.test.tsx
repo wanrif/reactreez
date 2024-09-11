@@ -4,7 +4,7 @@ import Theme from '@components/Theme';
 import { toggleTheme } from '@components/Theme/thunk';
 import { renderWithProviders } from '@utils/testHelper';
 import { act } from 'react';
-import store from '@store/stores';
+import store from '@store/configureStore';
 import { setTheme } from '@app/reducer';
 
 // Mock the react-icons

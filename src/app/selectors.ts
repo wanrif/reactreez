@@ -1,4 +1,4 @@
-import type { RootState } from '@store/stores';
+import type { RootState } from '@store/configureStore';
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectTheme = (state: RootState) => state.app.theme;

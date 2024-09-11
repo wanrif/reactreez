@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { RootState } from '@store/stores';
+import type { RootState } from '@store/configureStore';
 
 interface AppState {
   theme: 'light' | 'dark' | string;

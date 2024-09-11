@@ -1,8 +1,7 @@
 import React, { type PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
-import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import store, { persistedReducer, persistor } from '@store/stores';
+import store, { persistedReducer, persistor } from '@store/configureStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
@@ -10,6 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import en from '@i18n/en';
 import id from '@i18n/id';
 import { selectLocale } from '@app/selectors';
+import { configureStore } from '@reduxjs/toolkit';
 
 const locale = selectLocale(store.getState());
 

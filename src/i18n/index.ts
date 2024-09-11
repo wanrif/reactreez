@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { selectLocale } from '@app/selectors';
-import store, { persistor } from '@store/stores';
+import store, { persistor } from '@store/configureStore';
 
 import en from './en';
 import id from './id';

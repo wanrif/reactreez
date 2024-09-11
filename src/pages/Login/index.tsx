@@ -13,6 +13,7 @@ import Button from '@components/Button';
 import { loggedIn, setLoginLoading } from './reducer';
 import { selectLoginLoading } from './selectors';
 import { doLogin } from './thunk';
+import { persistor } from '@store/configureStore';
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -45,6 +46,7 @@ const Login = () => {
       dispatch(setLoginLoading(true));
 
       const response = await dispatch(doLogin(data)).unwrap();
+      persistor.flush();
       dispatch(loggedIn(response));
 
       const from = location.state?.from || '/';

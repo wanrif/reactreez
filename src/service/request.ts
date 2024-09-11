@@ -1,5 +1,5 @@
 import axios, { AxiosError, type InternalAxiosRequestConfig } from 'axios';
-import store from '@store/stores';
+import store from '@store/configureStore';
 import { selectRefreshToken, selectAccessToken } from '@pages/Login/selectors';
 import { loggedIn, loggedOut } from '@pages/Login/reducer';
 import { selectLocale } from '@app/selectors';
@@ -73,7 +73,6 @@ apiRequest.interceptors.response.use(
   (response) => response,
   async (error: AxiosError<{ message: string }>) => {
     const originalRequest = error.config as ExtendedAxiosRequestConfig;
-    console.error('error', originalRequest);
 
     if (
       error.response?.status === 401 &&

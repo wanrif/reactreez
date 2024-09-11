@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { fileURLToPath, URL } from 'url';
 import { obfuscator } from 'rollup-obfuscator';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 /**
  * @var prefix - unique prefix for the project
@@ -25,10 +26,10 @@ export default defineConfig({
       log: false,
       numbersToExpressions: false,
       renameGlobals: false,
-      selfDefending: true,
+      selfDefending: false,
       simplify: true,
       splitStrings: false,
-      stringArray: true,
+      stringArray: false,
       stringArrayCallsTransform: false,
       stringArrayCallsTransformThreshold: 0.5,
       stringArrayEncoding: [],
@@ -41,7 +42,9 @@ export default defineConfig({
       stringArrayWrappersType: 'variable',
       stringArrayThreshold: 0.75,
       unicodeEscapeSequence: false,
+      sourceMap: false,
     }),
+    nodePolyfills(),
   ],
   build: {
     rollupOptions: {
@@ -97,10 +100,10 @@ export default defineConfig({
       reporter: ['text', 'html', 'clover', 'json', 'lcov'],
       thresholds: {
         autoUpdate: true,
-        statements: 38.31,
-        branches: 65.11,
-        functions: 41.46,
-        lines: 38.31,
+        statements: 45.93,
+        branches: 75.47,
+        functions: 52.08,
+        lines: 45.93,
       },
     },
   },

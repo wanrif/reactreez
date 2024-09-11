@@ -3,7 +3,7 @@ import { screen, fireEvent } from '@testing-library/react';
 import Locale from '@components/Locale';
 import { renderWithProviders } from '@utils/testHelper';
 import { act } from 'react';
-import store from '@store/stores';
+import store from '@store/configureStore';
 import { setLocale } from '@app/reducer';
 
 describe('Locale Component', () => {

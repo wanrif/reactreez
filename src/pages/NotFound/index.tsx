@@ -32,7 +32,8 @@ const NotFound = () => {
     <div className='flex flex-col'>
       <div
         className='w-full bg-white shadow-sm dark:bg-primary-200 text-primary-200 dark:text-primary-50'
-        data-testid='header'>
+        data-testid='header'
+      >
         <div className='flex items-center container mx-auto justify-between py-4 px-4 lg:px-28'>
           <div className='text-xl font-medium cursor-pointer' onClick={() => navigate('/')}>
             Navbar
@@ -43,7 +44,8 @@ const NotFound = () => {
                 key={item.link}
                 type='button'
                 className='font-medium cursor-pointer'
-                onClick={() => handleNavigate(item.link)}>
+                onClick={() => handleNavigate(item.link)}
+              >
                 {t(item.name)}
               </button>
             ))}
