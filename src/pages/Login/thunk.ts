@@ -1,3 +1,4 @@
+// thunk for login page
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { login } from '@service/api';
 

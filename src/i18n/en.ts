@@ -1,5 +1,5 @@
 export default {
-  welcome: 'Welcome to React',
+  welcome: 'Welcome to ReacTreez',
   not_found: 'Page not found',
   navbar_home: 'Home',
   navbar_about: 'About',

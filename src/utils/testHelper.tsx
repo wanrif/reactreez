@@ -44,7 +44,7 @@ export function createTestStore(preloadedState = {}) {
   });
 }
 
-export function renderWithProviders(ui: React.ReactElement, { preloadedState = {}, ...renderOptions } = {}) {
+export function renderWithProviders(ui: React.ReactElement, { ...renderOptions } = {}) {
   function Wrapper({ children }: PropsWithChildren<{}>): React.ReactElement {
     return (
       <Provider store={store}>

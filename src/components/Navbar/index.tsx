@@ -42,7 +42,8 @@ const Navbar = () => {
               key={item.link}
               type='button'
               className='font-medium cursor-pointer'
-              onClick={() => navigate(item.link)}>
+              onClick={() => navigate(item.link)}
+            >
               {t(item.name)}
             </button>
           ))}

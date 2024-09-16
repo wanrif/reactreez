@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "types": ["vitest/globals", "vitest/jsdom", "@testing-library/jest-dom"],
     "paths": {
+      "@": ["./src"],
       "@app/*": ["./src/app/*"],
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"],

@@ -33,6 +33,7 @@ const Login = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<formData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -46,9 +47,11 @@ const Login = () => {
       dispatch(setLoginLoading(true));
 
       const response = await dispatch(doLogin(data)).unwrap();
+      console.log('response ->', response);
       persistor.flush();
       dispatch(loggedIn(response));
 
+      reset();
       const from = location.state?.from || '/';
       navigate(from);
     } catch (err: any) {
@@ -57,7 +60,7 @@ const Login = () => {
           position: 'top-right',
         });
       } else {
-        setError(err.data.message || err.message);
+        setError(err.data?.message || err.message);
       }
     } finally {
       dispatch(setLoginLoading(false));
@@ -69,7 +72,8 @@ const Login = () => {
       <form
         autoComplete='off'
         className='p-5 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-none border-gray-100 w-full max-w-[400px]'
-        onSubmit={handleSubmit(onSubmit)}>
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className='text-4xl font-bold text-center flex flex-col justify-center items-center'>
           <img
             src='https://cdn-icons-png.flaticon.com/512/2170/2170153.png'

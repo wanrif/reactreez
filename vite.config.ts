@@ -12,7 +12,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 const prefix = 'reactreez';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(() => ({
   plugins: [
     react(),
     obfuscator({
@@ -46,6 +46,13 @@ export default defineConfig({
     }),
     nodePolyfills(),
   ],
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: '_[folder]__[local]__[sha256:contenthash:hex:5]_[sha512:hash:base64:4]',
+      hashPrefix: prefix,
+    },
+  },
   build: {
     rollupOptions: {
       output: {
@@ -62,6 +69,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
       '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
@@ -99,12 +107,12 @@ export default defineConfig({
       ],
       reporter: ['text', 'html', 'clover', 'json', 'lcov'],
       thresholds: {
-        autoUpdate: true,
-        statements: 45.93,
-        branches: 75.47,
-        functions: 52.08,
-        lines: 45.93,
+        autoUpdate: false,
+        statements: 63.81,
+        branches: 80.55,
+        functions: 65.3,
+        lines: 63.81,
       },
     },
   },
-});
+}));

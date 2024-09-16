@@ -1,5 +1,5 @@
 export default {
-  welcome: 'Selamat datang di React',
+  welcome: 'Selamat datang di ReacTreez',
   not_found: 'Halaman tidak ditemukan',
   navbar_home: 'Beranda',
   navbar_about: 'Tentang',

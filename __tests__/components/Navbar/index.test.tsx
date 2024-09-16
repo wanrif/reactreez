@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import store from '@store/configureStore';
 import { loggedIn } from '@pages/Login/reducer';
 
-// Mock the useNavigate hook
 vi.mock('react-router-dom', () => ({
   useNavigate: vi.fn(),
 }));
@@ -20,9 +19,6 @@ describe('Navbar Component', async () => {
 
   afterEach(() => {
     vi.clearAllMocks();
-    store.subscribe(() => {
-      vi.clearAllMocks();
-    });
   });
 
   it('renders correctly', () => {
