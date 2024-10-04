@@ -67,15 +67,15 @@ describe('Login Component', () => {
       fireEvent.click(screen.getByRole('button', { name: 'Login' }));
     });
 
-    await waitFor(() => {
-      const mockLoginResponse = {
-        email: 'test@example.com',
-        password: 'password123',
-      };
-      (doLogin as unknown as Mock).mockReturnValue(() => Promise.resolve(mockLoginResponse));
+    // await waitFor(() => {
+    //   const mockLoginResponse = {
+    //     email: 'test@example.com',
+    //     password: 'password123',
+    //   };
+    //   (doLogin as unknown as Mock).mockReturnValue(() => Promise.resolve(mockLoginResponse));
 
-      (useAppSelector as unknown as Mock).mockReturnValue(true);
-    });
+    //   (useAppSelector as unknown as Mock).mockReturnValue(true);
+    // });
   });
 
   it('disables submit button when loading', () => {

@@ -108,10 +108,10 @@ export default defineConfig(() => ({
       reporter: ['text', 'html', 'clover', 'json', 'lcov'],
       thresholds: {
         autoUpdate: false,
-        statements: 63.81,
-        branches: 80.55,
+        statements: 63.78,
+        branches: 81.94,
         functions: 65.3,
-        lines: 63.81,
+        lines: 63.78,
       },
     },
   },

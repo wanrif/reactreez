@@ -23,10 +23,12 @@ const Login = () => {
   const isLoading = useAppSelector(selectLoginLoading);
   const [error, setError] = useState<string | null>(null);
 
-  const loginSchema = z.object({
-    email: z.string().email({ message: t('form_email_validation_invalid') }),
-    password: z.string().min(6, { message: t('form_password_validation_min') }),
-  });
+  const loginSchema = z
+    .object({
+      email: z.string().email({ message: t('form_email_validation_invalid') }),
+      password: z.string().min(6, { message: t('form_password_validation_min') }),
+    })
+    .strict();
   type formData = z.infer<typeof loginSchema>;
 
   const {
@@ -72,8 +74,7 @@ const Login = () => {
       <form
         autoComplete='off'
         className='p-5 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-none border-gray-100 w-full max-w-[400px]'
-        onSubmit={handleSubmit(onSubmit)}
-      >
+        onSubmit={handleSubmit(onSubmit)}>
         <div className='text-4xl font-bold text-center flex flex-col justify-center items-center'>
           <img
             src='https://cdn-icons-png.flaticon.com/512/2170/2170153.png'
